@@ -1,0 +1,16 @@
+name: CleggehMessage
+version: 2.0
+main: org.matecraft.cleggehmessage2.CleggehMessage
+author: Cleggeh
+description: >
+             A Draw my thing based plugin
+commands:
+    staff:
+        usage: / <Command>
+        desciption: Use this command to see how to become staff!
+    member:
+        usage: / <Command>
+        desciption: Use this command to see how to become member!
+    builder:
+        usage: / <Command>
+        desciption: Use this command to see how to become builder!
