@@ -8,9 +8,21 @@ commands:
     staff:
         usage: / <Command>
         desciption: Use this command to see how to become staff!
+    navigation:
+        usage: / <Command>
+        desciption: Use this command to see how to Navigate around the server!
     member:
+        usage: / <Command>
+        desciption: Use this command to see how to become member!
+    gladiator:
+        usage: / <Command>
+        desciption: Use this command to see how to become member!
+    navigation:
         usage: / <Command>
         desciption: Use this command to see how to become member!
     builder:
         usage: / <Command>
         desciption: Use this command to see how to become builder!
+    cm:
+        usage: / <Command> <arg> <arg>
+        desciption: Use this command to set info.

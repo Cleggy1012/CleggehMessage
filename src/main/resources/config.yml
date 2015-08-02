@@ -1,7 +1,7 @@
 staffmessage: Version 2.0 Staff message.
 buildermessage: Version 2.0 Builder message.
 membermessage: Version 2.0 Member message.
-
-
+navigationmessage: Version 2.0 Navigation message.
+gladiatormessage: Version 2.0 Gladiator message.
 
 commands: &5 /cm set &2staff \n &5 /cm set &2member \n &5 /cm set &2builder \n &5 /cm set &2gladiator \n &5 /cm set &2navigation
