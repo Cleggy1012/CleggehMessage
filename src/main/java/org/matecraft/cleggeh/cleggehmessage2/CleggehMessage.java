@@ -13,15 +13,16 @@ public class CleggehMessage extends JavaPlugin {
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         Player p = (Player) sender;
         SetCommands commands = new SetCommands(this);
+        InfoCommands info = new InfoCommands(this);
         
         String cmdName = args[1].toLowerCase();
 
         switch (cmdName) {
             case "staff":
-                InfoCommands.staff();
+                info.staff(p);
                 break;
             case "member":
-                InfoCommands.member();
+                info.member(p);
                 break;
             case "cm":
                 if (args[0].equalsIgnoreCase("set")) {
