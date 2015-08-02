@@ -15,7 +15,7 @@ public class CleggehMessage extends JavaPlugin {
         SetCommands commands = new SetCommands(this);
         InfoCommands info = new InfoCommands(this);
         
-        String cmdName = args[1].toLowerCase();
+        String cmdName = (cmd.getName().toLowerCase());
 
         switch (cmdName) {
             case "staff":
@@ -23,6 +23,15 @@ public class CleggehMessage extends JavaPlugin {
                 break;
             case "member":
                 info.member(p);
+                break;
+            case "builder":
+                info.builder(p);
+                break;
+            case "navigation":
+                info.navigation(p);
+                break;
+            case "gladiator":
+                info.gladiator(p);
                 break;
             case "cm":
                 if (args[0].equalsIgnoreCase("set")) {
