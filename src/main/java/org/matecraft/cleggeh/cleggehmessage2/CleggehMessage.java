@@ -8,7 +8,11 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class CleggehMessage extends JavaPlugin {
-    
+    @Override
+    public void onEnable() {
+        getConfig().options().copyDefaults(true);
+        saveConfig();
+    }
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         Player p = (Player) sender;

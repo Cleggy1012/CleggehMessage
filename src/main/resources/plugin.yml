@@ -1,6 +1,6 @@
 name: CleggehMessage
 version: 2.0
-main: org.matecraft.cleggehmessage2.CleggehMessage
+main: org.matecraft.cleggeh.cleggehmessage2.CleggehMessage
 author: Cleggeh
 description: >
              A Draw my thing based plugin
