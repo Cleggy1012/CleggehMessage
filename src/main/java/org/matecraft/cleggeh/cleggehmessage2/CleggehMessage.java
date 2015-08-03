@@ -15,9 +15,14 @@ public class CleggehMessage extends JavaPlugin {
     }
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
+        if (!(sender instanceof Player)) {
+            sender.sendMessage(ChatColor.RED + "Commands only for players in version 2.0!");
+            return true;
+        }
         Player p = (Player) sender;
         SetCommands commands = new SetCommands(this);
         InfoCommands info = new InfoCommands(this);
+        colorandformat color = new colorandformat(this);
         
         String cmdName = (cmd.getName().toLowerCase());
 
@@ -39,10 +44,15 @@ public class CleggehMessage extends JavaPlugin {
                 break;
             case "cm":
                 if (args[0].equalsIgnoreCase("set")) {
-                    String type = args[1];
-                    String message = makeMessage(args);
-                    commands.setMessage(type, message);
-                    p.sendMessage(ChatColor.GREEN + type + " message set to: " + ChatColor.WHITE + message);
+                    if (p.hasPermission("cleggehmessage.set")) {
+                        String type = args[1];
+                        String message = makeMessage(args);
+                        commands.setMessage(type, message);
+                        p.sendMessage(ChatColor.GREEN + type + " message set to: " + ChatColor.WHITE + message);
+                    }
+                    else {
+                        p.sendMessage(ChatColor.RED + "You don't have permission" + ChatColor.GREEN + "Cleggehmessage.set");
+                    } 
                 }
                 else {
                     p.sendMessage(ChatColor.RED  + "Usage: /cm set <Command>");
