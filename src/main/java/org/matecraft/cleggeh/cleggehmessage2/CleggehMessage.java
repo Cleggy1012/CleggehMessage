@@ -19,6 +19,7 @@ public class CleggehMessage extends JavaPlugin {
             sender.sendMessage(ChatColor.RED + "Commands only for players in version 2.0!");
             return true;
         }
+        
         Player p = (Player) sender;
         SetCommands commands = new SetCommands(this);
         InfoCommands info = new InfoCommands(this);

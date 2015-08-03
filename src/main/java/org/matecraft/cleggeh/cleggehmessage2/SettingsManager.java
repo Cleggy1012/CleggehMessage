@@ -30,6 +30,9 @@ public class SettingsManager {
                         Bukkit.getServer().getLogger().severe(ChatColor.RED + "Could not create Config.yml");
                     }
                 }
+                if (!p.getDataFolder().exists()) {
+                    p.getDataFolder().mkdir();
+                }
             dfile = new File(p.getDataFolder(), "data.yml");
                 if (!dfile.exists()) {
                     try {
