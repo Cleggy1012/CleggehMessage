@@ -9,10 +9,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class CleggehMessage extends JavaPlugin {
     SettingsManager settings = new SettingsManager(this);
+    
     @Override
     public void onEnable() {
         settings.setup(this);
     }
+    
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if (!(sender instanceof Player)) {
@@ -23,8 +25,8 @@ public class CleggehMessage extends JavaPlugin {
         Player p = (Player) sender;
         SetCommands commands = new SetCommands(this);
         InfoCommands info = new InfoCommands(this);
-        colorandformat color = new colorandformat(this);
         String setnoperms = (settings.getData().getString("SetNoPerms"));
+        String ColorNoPerms = (settings.getData().getString("ColorNoPerms"));
         
         String cmdName = (cmd.getName().toLowerCase());
 
@@ -69,6 +71,20 @@ public class CleggehMessage extends JavaPlugin {
             default:
                 p.sendMessage(ChatColor.RED + "Sorry, you cant do that.");
                 break;
+            case "color":
+                if (args.length >= 1) {
+                    if (p.hasPermission("cleggehmessage.color")) {
+                        String ColorName = args[0];
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', settings.getData().getString(ColorName + "code")));
+                    }
+                    else {
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', ColorNoPerms));
+                    }
+                }
+                else {
+                    p.sendMessage(ChatColor.RED + "Usage: /color <Color>");
+                }
+                
         }
         
         return true;
@@ -81,6 +97,9 @@ public class CleggehMessage extends JavaPlugin {
             message.append(appended);
         }
         return message.toString();
+    }
+    private void color(String ColorName) {
+        settings.getData().getString(ColorName + "code");
     }
 
 }

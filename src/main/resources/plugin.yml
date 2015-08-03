@@ -23,6 +23,9 @@ commands:
     builder:
         usage: / <Command>
         desciption: Use this command to see how to become builder!
+    color:
+        usage: / <Command> <Color>
+        desciption: Use this command to get Color codes!
     cm:
         usage: / <Command> <arg> <arg>
         desciption: Use this command to set info.
