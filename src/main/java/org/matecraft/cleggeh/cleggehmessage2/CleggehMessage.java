@@ -8,10 +8,10 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class CleggehMessage extends JavaPlugin {
+    SettingsManager settings = new SettingsManager(this);
     @Override
     public void onEnable() {
-        getConfig().options().copyDefaults(true);
-        saveConfig();
+        settings.setup(this);
     }
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
@@ -23,6 +23,7 @@ public class CleggehMessage extends JavaPlugin {
         SetCommands commands = new SetCommands(this);
         InfoCommands info = new InfoCommands(this);
         colorandformat color = new colorandformat(this);
+        String setnoperms = (settings.getData().getString("SetNoPerms"));
         
         String cmdName = (cmd.getName().toLowerCase());
 
@@ -43,15 +44,20 @@ public class CleggehMessage extends JavaPlugin {
                 info.gladiator(p);
                 break;
             case "cm":
-                if (args[0].equalsIgnoreCase("set")) {
-                    if (p.hasPermission("cleggehmessage.set")) {
-                        String type = args[1];
-                        String message = makeMessage(args);
-                        commands.setMessage(type, message);
-                        p.sendMessage(ChatColor.GREEN + type + " message set to: " + ChatColor.WHITE + message);
+                if (args.length >= 2) {
+                    if (args[0].equalsIgnoreCase("set")) {
+                        if (p.hasPermission("cleggehmessage.set")) {
+                            String type = args[1];
+                            String message = makeMessage(args);
+                            commands.setMessage(type, message);
+                            p.sendMessage(ChatColor.GREEN + type + " message set to: " + ChatColor.WHITE + message);
+                        }
+                        else {
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', setnoperms));
+                        }
                     }
-                    else {
-                        p.sendMessage(ChatColor.RED + "You don't have permission" + ChatColor.GREEN + "Cleggehmessage.set");
+                        else {
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', setnoperms));
                     } 
                 }
                 else {
