@@ -31,5 +31,8 @@ public class InfoCommands {
         String navigationmessage = plugin.getConfig().getString("navigationmessage");
         p.sendMessage(ChatColor.translateAlternateColorCodes('&', navigationmessage));
     }
+    void sendmessage(Player p) {
+        
+    }
 }
 
