@@ -1,8 +1,14 @@
 package org.matecraft.cleggeh.cleggehmessage2;
 
+import com.google.common.io.ByteStreams;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.logging.Level;
 import org.bukkit.Bukkit;
+import static org.bukkit.Bukkit.getLogger;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -18,7 +24,32 @@ public class SettingsManager {
         
         FileConfiguration data;
         File dfile;
-        
+        private boolean copyDefault(String source, String dest) {
+            File destFile = new File(plugin.getDataFolder(), dest);
+            if (!destFile.exists()) {
+                try {
+                    destFile.getParentFile().mkdirs();
+                    InputStream in = getClass().getClassLoader().getResourceAsStream(source);
+                    if (in != null) {
+                        try {
+                            try (OutputStream out = new FileOutputStream(destFile)) {
+                                ByteStreams.copy(in, out);
+                            }
+                        }
+                        finally {
+                            in.close();
+                        }
+                        return true;
+                    }
+                }
+                catch (IOException e) {
+                    getLogger().log(Level.WARNING, "Error copying default " + dest, e);
+                }
+            }
+            
+            
+            return false;
+        }
         
         public void setup(Plugin p) {
             cfile = new File(p.getDataFolder(), "config.yml");
