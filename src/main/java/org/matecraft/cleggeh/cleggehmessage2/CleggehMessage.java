@@ -12,9 +12,7 @@ public class CleggehMessage extends JavaPlugin {
     SetCommands commands = new SetCommands(this);
     InfoCommands info = new InfoCommands(this);
     String setnoperms = settings.getData().getString("SetNoPerms");
-    String addnoperms = settings.getData().getString("AddNoPerms");
     String ColorNoPerms = settings.getData().getString("ColorNoPerms");
-    AddCommand addcmd = new AddCommand(this);
     Help help = new Help(this);
 
     @Override
@@ -50,6 +48,9 @@ public class CleggehMessage extends JavaPlugin {
                 info.gladiator(p);
                 break;
             case "cm":
+                if (args.length <= 1) {
+                    help.sethelp(p);
+                }
                 if (args.length >= 2) {
                     if (args[0].equalsIgnoreCase("set")) {
                         if (p.hasPermission("cleggehmessage.set")) {
@@ -65,24 +66,6 @@ public class CleggehMessage extends JavaPlugin {
                     } else {
                         p.sendMessage(ChatColor.RED + setnoperms);
                     }
-                    if (args[0].equalsIgnoreCase("add")) {
-                        if (p.hasPermission("cleggehmessage.add")) {
-                            String cmdadd = args[1];
-                            addcmd.addcmd(cmdadd);
-                            return true;
-                        } else {
-                            p.sendMessage(ChatColor.RED + addnoperms);
-                            return true;
-                        }
-                    } else {
-                        p.sendMessage(ChatColor.RED + addnoperms);
-                    }
-                }
-                if (args[0].equalsIgnoreCase("help")) {
-                    help.sethelp(p);
-                    return true;
-                } else {
-                    help.sethelp(p);
                 }
                 break;
             case "color":
@@ -90,7 +73,7 @@ public class CleggehMessage extends JavaPlugin {
                     if (p.hasPermission("cleggehmessage.color")) {
                         try {
                             String ColorName = args[0];
-                            String code = args[0];
+                            String code = settings.getData().getString(ColorName);
                             ChatColor color = ChatColor.valueOf(ColorName.toUpperCase());
                             switch (color) {
                                 case WHITE:
@@ -102,27 +85,19 @@ public class CleggehMessage extends JavaPlugin {
                         } catch (IllegalArgumentException e) {
                             help.colorhelp(p);
                         }
-
+                        return true;
                     }
                     if (args[0].equalsIgnoreCase("list")) {
                         help.allcolor(p);
                     }
                     if (args[0].equalsIgnoreCase("all")) {
                         help.allcolor(p);
-                    }
-                    
-                    else {
+                    } else {
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', ColorNoPerms));
                     }
 
                 } else {
                     help.colorhelp(p);
-                }
-            case "format":
-                if (args.length >= 1) {
-                    if (p.hasPermission("cleggehmessage.color")) {
-
-                    }
                 }
         }
 

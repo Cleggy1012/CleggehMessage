@@ -35,22 +35,23 @@ public class Help {
         p.sendMessage(ChatColor.GREEN + "/color <Color>");
         p.sendMessage(ChatColor.GREEN + "/color List");
         p.sendMessage(ChatColor.GREEN + "/color all");
-        p.sendMessage(ChatColor.GREEN + "/format <Format>");
-        p.sendMessage(ChatColor.GREEN + "/format List");
-        p.sendMessage(ChatColor.GREEN + "/format all");
+        p.sendMessage(ChatColor.GREEN + "/color <Format>");
         p.sendMessage(ChatColor.RED + "-----------" + ChatColor.GRAY + "[End]" + ChatColor.RED + "------------");
     }
 
     public void allcolor(Player p) {
         p.sendMessage(ChatColor.RED + "------" + ChatColor.GRAY + "[CleggehMessage]" + ChatColor.RED + "------");
-        p.sendMessage(ChatColor.GREEN + "Black Dark_Blue");
-        p.sendMessage(ChatColor.GREEN + "Dark_Green Dark_Aqua");
-        p.sendMessage(ChatColor.GREEN + "Dark_Red Dark_Purple ");
-        p.sendMessage(ChatColor.GREEN + "Gold Gray");
-        p.sendMessage(ChatColor.GREEN + "Dark_Gray Blue");
-        p.sendMessage(ChatColor.GREEN + "Green Aqua");
-        p.sendMessage(ChatColor.GREEN + "Red Light_Purple");
-        p.sendMessage(ChatColor.GREEN + "Yellow White");
+        p.sendMessage("Black, Dark_Blue");
+        p.sendMessage("Dark_Green, Dark_Aqua");
+        p.sendMessage("Dark_Red, Dark_Purple ");
+        p.sendMessage("Gold, Gray");
+        p.sendMessage("Dark_Gray, Blue");
+        p.sendMessage("Green, Aqua");
+        p.sendMessage("Red, Light_Purple");
+        p.sendMessage("Yellow, White");
+        p.sendMessage("Obfuscated, Bold");
+        p.sendMessage("Strikethrough, Underline");
+        p.sendMessage("Italic, Reset");
         p.sendMessage(ChatColor.RED + "-----------" + ChatColor.GRAY + "[End]" + ChatColor.RED + "------------");
     }
 }
