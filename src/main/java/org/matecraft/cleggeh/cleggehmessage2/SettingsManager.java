@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.logging.Level;
-import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
@@ -55,14 +54,17 @@ public class SettingsManager {
     }
 
     public FileConfiguration getData() {
+        if (data == null) {
+            data = YamlConfiguration.loadConfiguration(new File(plugin.getDataFolder(), "data.yml"));
+        }
         return data;
     }
-
+    
     public void saveData() {
         try {
             data.save(dfile);
         } catch (IOException e) {
-            plugin.getLogger().severe(ChatColor.RED + "Could not save data.yml");
+            plugin.getLogger().log(Level.WARNING, "Could not save data.yml");
         }
     }
 
@@ -78,7 +80,7 @@ public class SettingsManager {
         try {
             config.save(cfile);
         } catch (IOException e) {
-            plugin.getLogger().severe(ChatColor.RED + "Could not save config.yml");
+            plugin.getLogger().log(Level.WARNING, "Could not save Config.yml");
         }
     }
 

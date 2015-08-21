@@ -1,2 +1,3 @@
-SetNoPerms: &c You Do not have the Permission &2cleggehMessage.set
-ColorNoPerms: &cYou Do not have the Permission &2cleggehmessage.color
+SetNoPerms: You Do not have the Permission cleggehMessage.set
+ColorNoPerms: You Do not have the Permission cleggehmessage.color
+AddNoPerms: You Do not have the Permission cleggehMessage.add

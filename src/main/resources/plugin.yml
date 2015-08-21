@@ -3,29 +3,35 @@ version: 2.0
 main: org.matecraft.cleggeh.cleggehmessage2.CleggehMessage
 author: Cleggeh
 description: >
-             A Draw my thing based plugin
+             A simple Message Plugin.
 commands:
     staff:
-        usage: / <Command>
         desciption: Use this command to see how to become staff!
+        
     navigation:
-        usage: / <Command>
         desciption: Use this command to see how to Navigate around the server!
+        
     member:
-        usage: / <Command>
         desciption: Use this command to see how to become member!
+        
     gladiator:
-        usage: / <Command>
-        desciption: Use this command to see how to become member!
+        desciption: Use this command to see how to become gladiator!
+        
     navigation:
-        usage: / <Command>
         desciption: Use this command to see how to become member!
+        
     builder:
-        usage: / <Command>
         desciption: Use this command to see how to become builder!
+        
     color:
-        usage: / <Command> <Color>
         desciption: Use this command to get Color codes!
+        
     cm:
-        usage: / <Command> <arg> <arg>
         desciption: Use this command to set info.
+permissions:
+    cleggehMessage.set:
+        default: op
+    cleggehmessage.color:
+        default: op
+    cleggehmessage.add:
+        default: op
