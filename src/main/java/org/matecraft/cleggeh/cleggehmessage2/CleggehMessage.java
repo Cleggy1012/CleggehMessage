@@ -86,18 +86,14 @@ public class CleggehMessage extends JavaPlugin {
                             help.colorhelp(p);
                         }
                         return true;
-                    }
-                    if (args[0].equalsIgnoreCase("list")) {
-                        help.allcolor(p);
-                    }
-                    if (args[0].equalsIgnoreCase("all")) {
-                        help.allcolor(p);
                     } else {
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', ColorNoPerms));
+                        return false;
                     }
 
                 } else {
-                    help.colorhelp(p);
+                    help.allcolor(p);
+                    return false;
                 }
         }
 

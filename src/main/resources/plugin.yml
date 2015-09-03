@@ -25,6 +25,7 @@ commands:
         
     color:
         desciption: Use this command to get Color codes!
+        aliases: [color, format]
         
     cm:
         desciption: Use this command to set info.

@@ -1,3 +1,23 @@
 SetNoPerms: You Do not have the Permission cleggehMessage.set
 ColorNoPerms: You Do not have the Permission cleggehmessage.color
-AddNoPerms: You Do not have the Permission cleggehMessage.add
+BLACK: Black - &0
+DARK_BLUE: Dark_blue - &1
+DARK_GREEN: Dark_Green - &2
+DARK_AQUA: Dark_Aqua - &3
+DARK_RED: Dark_Red - &4
+DARK_PURPLE: Dark_Purple - &5
+GOLD: Gold - &6
+GRAY: Gray - &7
+DARK_GRAY: Dark_Gray - &8
+BLUE: Blue - &9
+GREEN: Green - &a
+AQUA: Aqua - &b
+RED: Red - &c
+LIGHT_PURPLE: Light_Purple - &d
+YELLOW: Yellow - &e
+OBFUSCATED: Obfuscated - &k
+BOLD: Bold - &l
+STRIKETHROUGH: Strikethrough - &m
+UNDERLINE: Underline - &n
+ITALIC: Italic - &o
+RESET: Reset - &r
