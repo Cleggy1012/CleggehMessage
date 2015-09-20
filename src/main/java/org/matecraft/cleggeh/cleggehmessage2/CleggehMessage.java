@@ -48,21 +48,31 @@ public class CleggehMessage extends JavaPlugin {
                 info.gladiator(p);
                 break;
             case "cm":
-                if (args.length <= 1) {
+                if (args.length <= 0) {
                     help.sethelp(p);
                 }
-                if (args.length >= 2) {
+                if (args.length >= 1) {
                     if (args[0].equalsIgnoreCase("set")) {
-                        if (p.hasPermission("cleggehmessage.set")) {
+                        if (p.hasPermission("cleggehmessage.admin")) {
                             String type = args[1];
                             String message = makeMessage(args);
                             commands.setMessage(type, message);
                             p.sendMessage(ChatColor.GREEN + type + " message set to: " + ChatColor.WHITE + message);
                             return true;
-                        } else {
-                            p.sendMessage(ChatColor.RED + setnoperms);
-                            return true;
                         }
+                    } if (args[0].equalsIgnoreCase("reload")) {
+                        if (p.hasPermission("cleggehmessage.admin")) {
+                            settings.reloadConfig();
+                            settings.reloadData();
+                            p.sendMessage(ChatColor.GREEN + "Configs reloaded");
+                        }
+                    } if (args[0].equalsIgnoreCase("save")) {
+                        if (p.hasPermission("cleggehmessage.admin")) {
+                            settings.saveConfig();
+                            settings.saveData();
+                            p.sendMessage(ChatColor.GREEN + "Configs saved");
+                        }
+                        
                     } else {
                         p.sendMessage(ChatColor.RED + setnoperms);
                     }
@@ -73,7 +83,7 @@ public class CleggehMessage extends JavaPlugin {
                     if (p.hasPermission("cleggehmessage.color")) {
                         try {
                             String ColorName = args[0];
-                            String code = settings.getData().getString(ColorName);
+                            String code = settings.getData().getString(ColorName).toUpperCase();
                             ChatColor color = ChatColor.valueOf(ColorName.toUpperCase());
                             switch (color) {
                                 case WHITE:

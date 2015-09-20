@@ -1,5 +1,5 @@
 name: CleggehMessage
-version: 2.0
+version: 2.1
 main: org.matecraft.cleggeh.cleggehmessage2.CleggehMessage
 author: Cleggeh
 description: >
@@ -30,7 +30,7 @@ commands:
     cm:
         desciption: Use this command to set info.
 permissions:
-    cleggehMessage.set:
+    cleggehMessage.admin:
         default: op
     cleggehmessage.color:
         default: op

@@ -69,7 +69,7 @@ public class SettingsManager {
     }
 
     public void reloadData() {
-        data = YamlConfiguration.loadConfiguration(dfile);
+        YamlConfiguration.loadConfiguration(dfile);
     }
 
     public FileConfiguration getConfig() {
@@ -85,6 +85,6 @@ public class SettingsManager {
     }
 
     public void reloadConfig() {
-        config = YamlConfiguration.loadConfiguration(cfile);
+        YamlConfiguration.loadConfiguration(cfile);
     }
 }
