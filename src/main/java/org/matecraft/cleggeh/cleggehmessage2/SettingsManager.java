@@ -69,6 +69,7 @@ public class SettingsManager {
     }
 
     public void reloadData() {
+        
         YamlConfiguration.loadConfiguration(dfile);
     }
 

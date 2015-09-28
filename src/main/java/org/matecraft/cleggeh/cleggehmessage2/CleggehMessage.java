@@ -47,6 +47,12 @@ public class CleggehMessage extends JavaPlugin {
             case "gladiator":
                 info.gladiator(p);
                 break;
+            case "teamspeak":
+                info.teamspeak(p);
+                break;
+            case "claiming":
+                info.claiming(p);
+                break;
             case "cm":
                 if (args.length <= 0) {
                     help.sethelp(p);
@@ -62,13 +68,13 @@ public class CleggehMessage extends JavaPlugin {
                         }
                     } if (args[0].equalsIgnoreCase("reload")) {
                         if (p.hasPermission("cleggehmessage.admin")) {
-                            settings.reloadConfig();
+                            reloadConfig();
                             settings.reloadData();
                             p.sendMessage(ChatColor.GREEN + "Configs reloaded");
                         }
                     } if (args[0].equalsIgnoreCase("save")) {
                         if (p.hasPermission("cleggehmessage.admin")) {
-                            settings.saveConfig();
+                            saveConfig();
                             settings.saveData();
                             p.sendMessage(ChatColor.GREEN + "Configs saved");
                         }
@@ -82,9 +88,9 @@ public class CleggehMessage extends JavaPlugin {
                 if (args.length >= 1) {
                     if (p.hasPermission("cleggehmessage.color")) {
                         try {
-                            String ColorName = args[0];
-                            String code = settings.getData().getString(ColorName).toUpperCase();
-                            ChatColor color = ChatColor.valueOf(ColorName.toUpperCase());
+                            String ColorName = args[0].toUpperCase();
+                            String code = settings.getData().getString(ColorName);
+                            ChatColor color = ChatColor.valueOf(ColorName);
                             switch (color) {
                                 case WHITE:
                                     p.sendMessage("Whatcha need that for bud, it's &r or &f");

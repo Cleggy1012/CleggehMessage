@@ -27,6 +27,7 @@ public class Help {
         p.sendMessage(ChatColor.GREEN + "/cm set Builder");
         p.sendMessage(ChatColor.GREEN + "/cm set Gladiator");
         p.sendMessage(ChatColor.GREEN + "/cm set Navigation");
+        p.sendMessage(ChatColor.GREEN + "/cm set teamspeak");
         p.sendMessage(ChatColor.RED + "-----------" + ChatColor.DARK_PURPLE + "[End]" + ChatColor.RED + "------------");
     }
 

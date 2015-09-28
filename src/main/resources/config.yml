@@ -1,7 +1,7 @@
-staffmessage: Version 2.0 Staff message.
-buildermessage: Version 2.0 Builder message.
-membermessage: Version 2.0 Member message.
-navigationmessage: Version 2.0 Navigation message.
-gladiatormessage: Version 2.0 Gladiator message.
-
+staffmessage: In order to join staff you must first play for 30 hours, complete the member+ quiz and have no previous bans.
+buildermessage: Build a decent build and type /pe create BuilderApp , Where you build is located.
+membermessage: Use /nav to check out the different servers in matecraft.
+navigationmessage: Play for 1 hour to become a member, type /ar check to see how long you've played.
+gladiatormessage: Beat the highscore in WoodLeague and win the following, Unique rank with unique prefix and a 4x MCMMO boost, a statue of you by the arena and a special Gladiator sword!
+teamspeakmessage: 'Feel like talking to other players on the server? Join the Matecraft TeamSpeak, IP: mc.matecraft.org.'
 commands: &5 /cm set &2staff \n &5 /cm set &2member \n &5 /cm set &2builder \n &5 /cm set &2gladiator \n &5 /cm set &2navigation
