@@ -1,5 +1,6 @@
 package org.matecraft.cleggeh.cleggehmessage2;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -32,6 +33,74 @@ public class CleggehMessage extends JavaPlugin {
         String cmdName = (cmd.getName().toLowerCase());
 
         switch (cmdName) {
+            case "addperm":
+                if (args.length <= 0) {
+                    help.addPerm(p);
+                } else {
+                    String val = "true";
+                    if(args[4] != null){
+                         val = args[4];
+                    }
+                    switch (args[1].toLowerCase()) {
+                        case "enchanted":
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Enchanted:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set survivalworld:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set survivalworld_nether:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set survivalworld_the_end:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set ResourceWorld:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set EnderDoors:" + args[3] + " " + val);
+                            break;
+                        case "cast-away":
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set skyblock:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set skyblock_nether:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set skyblock_the_end:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set ASkyBlock:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set ASkyBlock_nether:" + args[3] + " " + val);
+                            break;
+                        case "inspire":
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set spawn:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Builderexamples:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Terrain-Plots:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set TerrainFree:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set WorldShapers:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set freebuild:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set plotworld:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set plotworldlarge:" + args[3] + " " + val);
+                            break;
+                        case "bombermate":
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Bomber2:" + args[3] + " " + val);
+                            break;
+                        case "continuity":
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set world:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set world_nether:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set world_the_end:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Flat:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set jres:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set njres:" + args[3] + " " + val);
+                            break;
+                        case "prison":
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Prison2:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Freeworld:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Hub:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Plots:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Quest:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Quest1:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Quests:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Plot:" + args[3] + " " + val);
+                            break;
+                        case "aasgard":
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set aasgard" + args[3] + " " + val);
+                            break;
+                        case "nexus":
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set world:" + args[3] + " " + val);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set world_nether:" + args[3] + " " + val);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                break;
             case "staff":
                 info.staff(p);
                 break;
@@ -66,19 +135,21 @@ public class CleggehMessage extends JavaPlugin {
                             p.sendMessage(ChatColor.GREEN + type + " message set to: " + ChatColor.WHITE + message);
                             return true;
                         }
-                    } if (args[0].equalsIgnoreCase("reload")) {
+                    }
+                    if (args[0].equalsIgnoreCase("reload")) {
                         if (p.hasPermission("cleggehmessage.admin")) {
                             reloadConfig();
                             settings.reloadData();
                             p.sendMessage(ChatColor.GREEN + "Configs reloaded");
                         }
-                    } if (args[0].equalsIgnoreCase("save")) {
+                    }
+                    if (args[0].equalsIgnoreCase("save")) {
                         if (p.hasPermission("cleggehmessage.admin")) {
                             saveConfig();
                             settings.saveData();
                             p.sendMessage(ChatColor.GREEN + "Configs saved");
                         }
-                        
+
                     } else {
                         p.sendMessage(ChatColor.RED + setnoperms);
                     }

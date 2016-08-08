@@ -35,6 +35,9 @@ commands:
         
     cm:
         desciption: Use this command to set info.
+        
+    addperm:
+        desciption: Adds permissions to all server worlds
 permissions:
     cleggehMessage.admin:
         default: op

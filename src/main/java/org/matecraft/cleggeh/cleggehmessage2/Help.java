@@ -54,4 +54,7 @@ public class Help {
         p.sendMessage("Italic, Reset");
         p.sendMessage(ChatColor.RED + "-----------" + ChatColor.GRAY + "[End]" + ChatColor.RED + "------------");
     }
+    public void addPerm(Player p){
+        p.sendMessage("");
+    }
 }

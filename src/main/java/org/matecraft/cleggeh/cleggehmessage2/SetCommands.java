@@ -12,5 +12,4 @@ public class SetCommands {
         plugin.getConfig().set(type + "message", message);
         plugin.saveConfig();
     }
-
 }
