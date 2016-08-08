@@ -37,65 +37,62 @@ public class CleggehMessage extends JavaPlugin {
                 if (args.length <= 0) {
                     help.addPerm(p);
                 } else {
-                    String val = "true";
-                    if(args[4] != null){
-                         val = args[4];
-                    }
-                    switch (args[1].toLowerCase()) {
+                    switch (args[0].toLowerCase()) {
                         case "enchanted":
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Enchanted:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set survivalworld:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set survivalworld_nether:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set survivalworld_the_end:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set ResourceWorld:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set EnderDoors:" + args[3] + " " + val);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Enchanted:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set survivalworld:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set survivalworld_nether:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set survivalworld_the_end:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set ResourceWorld:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set EnderDoors:" + args[2] + " " + args[3]);
                             break;
                         case "cast-away":
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set skyblock:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set skyblock_nether:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set skyblock_the_end:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set ASkyBlock:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set ASkyBlock_nether:" + args[3] + " " + val);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set skyblock:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set skyblock_nether:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set skyblock_the_end:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set ASkyBlock:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set ASkyBlock_nether:" + args[2] + " " + args[3]);
                             break;
                         case "inspire":
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set spawn:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Builderexamples:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Terrain-Plots:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set TerrainFree:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set WorldShapers:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set freebuild:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set plotworld:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set plotworldlarge:" + args[3] + " " + val);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set spawn:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Builderexamples:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Terrain-Plots:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set TerrainFree:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set WorldShapers:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set freebuild:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set plotworld:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set plotworldlarge:" + args[2] + " " + args[3]);
                             break;
                         case "bombermate":
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Bomber2:" + args[3] + " " + val);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Bomber2:" + args[2] + " " + args[3]);
                             break;
                         case "continuity":
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set world:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set world_nether:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set world_the_end:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Flat:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set jres:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set njres:" + args[3] + " " + val);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set world:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set world_nether:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set world_the_end:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Flat:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set jres:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set njres:" + args[2] + " " + args[3]);
                             break;
                         case "prison":
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Prison2:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Freeworld:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Hub:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Plots:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Quest:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Quest1:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Quests:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set Plot:" + args[3] + " " + val);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Prison2:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Freeworld:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Hub:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Plots:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Quest:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Quest1:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Quests:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Plot:" + args[2] + " " + args[3]);
                             break;
                         case "aasgard":
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set aasgard" + args[3] + " " + val);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set aasgard" + args[2] + " " + args[3]);
                             break;
                         case "nexus":
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set world:" + args[3] + " " + val);
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "zperms group " + args[2] + "set world_nether:" + args[3] + " " + val);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set world:" + args[2] + " " + args[3]);
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set world_nether:" + args[2] + " " + args[3]);
                             break;
                         default:
+                            p.sendMessage(ChatColor.RED + "Invalid Server " + args[0]);
                             break;
                     }
                 }
