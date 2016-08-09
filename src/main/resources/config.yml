@@ -5,3 +5,7 @@ navigationmessage: Play for 1 hour to become a member, type /ar check to see how
 gladiatormessage: Beat the highscore in WoodLeague and win the following, Unique rank with unique prefix and a 4x MCMMO boost, a statue of you by the arena and a special Gladiator sword!
 teamspeakmessage: 'Feel like talking to other players on the server? Join the Matecraft TeamSpeak, IP: mc.matecraft.org.'
 commands: &5 /cm set &2staff \n &5 /cm set &2member \n &5 /cm set &2builder \n &5 /cm set &2gladiator \n &5 /cm set &2navigation
+default-worlds:
+    - "world"
+    - "world_nether"
+    - "world_the_end"

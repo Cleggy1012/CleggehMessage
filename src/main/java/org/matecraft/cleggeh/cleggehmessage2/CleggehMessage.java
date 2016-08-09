@@ -23,81 +23,40 @@ public class CleggehMessage extends JavaPlugin {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
+        Player p = (Player) sender;
+        String cmdName = (cmd.getName().toLowerCase());
+        switch (cmdName) {
+            case "addperm":
+                if (args.length != 4) {
+                    help.addPerm(p);
+                } else {
+                    if (getConfig().getString(args[0] + "-worlds") != null) {
+                        for (String world : getConfig().getStringList(args[0] + "-worlds")) {
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set " + world + ":" + args[2] + " " + args[3]);
+                        }
+                    }else{
+                        p.sendMessage(ChatColor.RED + "Invalid Server" + args[0] +  " -- Config worlds not found Command is case sensitive");
+                    }
+                }
+                break;
+            case "delperm":
+                if (args.length != 3) {
+                    help.delPerm(p);
+                } else {
+                    if (getConfig().getString(args[0] + "-worlds") != null) {
+                        for (String world : getConfig().getStringList(args[0] + "-worlds")) {
+                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " unset " + world + ":" + args[2]);
+                        }
+                    }else{
+                        p.sendMessage(ChatColor.RED + "Invalid Server" + args[0] +  " -- Config worlds not found Command is case sensitive");
+                    }
+                }
+        }
         if (!(sender instanceof Player)) {
             sender.sendMessage(ChatColor.RED + "Commands only for players in version 2.0!");
             return true;
         }
-
-        Player p = (Player) sender;
-
-        String cmdName = (cmd.getName().toLowerCase());
-
         switch (cmdName) {
-            case "addperm":
-                if (args.length <= 0) {
-                    help.addPerm(p);
-                } else {
-                    switch (args[0].toLowerCase()) {
-                        case "enchanted":
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Enchanted:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set survivalworld:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set survivalworld_nether:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set survivalworld_the_end:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set ResourceWorld:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set EnderDoors:" + args[2] + " " + args[3]);
-                            break;
-                        case "cast-away":
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set skyblock:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set skyblock_nether:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set skyblock_the_end:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set ASkyBlock:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set ASkyBlock_nether:" + args[2] + " " + args[3]);
-                            break;
-                        case "inspire":
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set spawn:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Builderexamples:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Terrain-Plots:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set TerrainFree:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set WorldShapers:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set freebuild:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set plotworld:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set plotworldlarge:" + args[2] + " " + args[3]);
-                            break;
-                        case "bombermate":
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Bomber2:" + args[2] + " " + args[3]);
-                            break;
-                        case "continuity":
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set world:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set world_nether:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set world_the_end:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Flat:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set jres:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set njres:" + args[2] + " " + args[3]);
-                            break;
-                        case "prison":
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Prison2:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Freeworld:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Hub:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Plots:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Quest:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Quest1:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Quests:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set Plot:" + args[2] + " " + args[3]);
-                            break;
-                        case "aasgard":
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set aasgard" + args[2] + " " + args[3]);
-                            break;
-                        case "nexus":
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set world:" + args[2] + " " + args[3]);
-                            Bukkit.getServer().dispatchCommand(p, "zperms group " + args[1] + " set world_nether:" + args[2] + " " + args[3]);
-                            break;
-                        default:
-                            p.sendMessage(ChatColor.RED + "Invalid Server " + args[0]);
-                            break;
-                    }
-                }
-
-                break;
             case "staff":
                 info.staff(p);
                 break;

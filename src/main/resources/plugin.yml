@@ -37,7 +37,9 @@ commands:
         desciption: Use this command to set info.
         
     addperm:
-        desciption: Adds permissions to all server worlds
+        desciption: Adds permissions to all server worlds.
+    delperm:
+        desciption: Deletes Permission from all worlds on a server.
 permissions:
     cleggehMessage.admin:
         default: op

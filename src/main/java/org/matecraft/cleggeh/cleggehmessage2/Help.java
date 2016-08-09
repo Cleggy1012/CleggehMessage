@@ -55,6 +55,9 @@ public class Help {
         p.sendMessage(ChatColor.RED + "-----------" + ChatColor.GRAY + "[End]" + ChatColor.RED + "------------");
     }
     public void addPerm(Player p){
-        p.sendMessage("");
+        p.sendMessage(ChatColor.GREEN + "/addperm " + ChatColor.YELLOW + "{server} " + ChatColor.GREEN + "{group} " + ChatColor.YELLOW + "{permission} " + ChatColor.GREEN + "{value}");
+    }
+    public void delPerm(Player p){
+        p.sendMessage(ChatColor.GREEN + "/delperm " + ChatColor.YELLOW + "{server} " + ChatColor.GREEN + "{group} " + ChatColor.YELLOW + "{permission}");
     }
 }
